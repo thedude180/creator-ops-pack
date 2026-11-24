@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creator Ops Pack — GTA 6 Edition</title>
+<meta name="description" content="The ops system for GTA 6 creators: content calendar, sponsor tracking with an FTC disclosure checklist, production workflow, and finance tracking. Notion + Google Sheets. Founder pre-order $29, refundable any time before delivery.">
+<style>
+  :root{
+    --bg:#0d0f14; --panel:#161a22; --panel2:#1c212d; --line:#2a3040;
+    --text:#eef1f6; --muted:#a7b0c0; --pink:#ff4d8d; --cyan:#39c2d7; --amber:#ffb84d;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  header{padding:72px 0 40px;text-align:center;
+    background:radial-gradient(720px 320px at 50% -60px,rgba(255,77,141,.20),transparent 65%),
+               radial-gradient(620px 300px at 85% 0,rgba(57,194,215,.14),transparent 60%)}
+  .kicker{letter-spacing:.22em;text-transform:uppercase;font-size:12.5px;color:var(--cyan);font-weight:700}
+  h1{font-size:44px;line-height:1.12;margin:14px 0 10px}
+  h1 .accent{background:linear-gradient(90deg,var(--pink),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{font-size:21px;color:var(--text);margin:0 0 8px;font-weight:600}
+  .sub{color:var(--muted);max-width:620px;margin:0 auto}
+  .cta-row{margin:30px 0 6px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:17px}
+  .btn-buy{background:linear-gradient(90deg,var(--pink),#ff7a59);color:#fff}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:var(--panel)}
+  .terms{font-size:14px;color:var(--muted)}
+  .terms strong{color:var(--text)}
+  section{padding:38px 0 6px}
+  h2{font-size:27px;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:640px){.grid{grid-template-columns:1fr} h1{font-size:34px}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:19px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px}
+  .card .num{color:var(--pink);font-weight:800;font-size:13px;letter-spacing:.15em}
+  .pricebox{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:30px;text-align:center;margin-top:14px}
+  .price{font-size:46px;font-weight:800;line-height:1}
+  .price small{font-size:17px;color:var(--muted);font-weight:600}
+  .strike{color:var(--muted);text-decoration:line-through}
+  ul.checks{list-style:none;padding:0;margin:14px auto 4px;max-width:520px;text-align:left}
+  ul.checks li{padding:5px 0 5px 28px;position:relative;color:var(--muted)}
+  ul.checks li::before{content:"✓";position:absolute;left:4px;color:var(--cyan);font-weight:800}
+  ul.checks li strong{color:var(--text)}
+  .honest{border-left:3px solid var(--amber);background:var(--panel);padding:16px 20px;border-radius:0 12px 12px 0;color:var(--muted);font-size:15.5px}
+  .honest strong{color:var(--text)}
+  footer{margin:56px 0 0;border-top:1px solid var(--line);padding:26px 0 46px;color:var(--muted);font-size:14.5px;text-align:center}
+  a{color:var(--cyan)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">For GTA 6 creators, in launch season</div>
+    <h1>Creator Ops Pack<br><span class="accent">GTA 6 Edition</span></h1>
+    <p class="tagline">Ops system for GTA 6 creators: calendar, sponsors, finances.</p>
+    <p class="sub">The game isn't the bottleneck — the back office is. This is the operating system one working gaming channel actually runs on, packaged as templates: every clip and video tracked, every sponsor deal in one place, and the tax money set aside as it lands.</p>
+    <div class="cta-row">
+      <a class="btn btn-buy" href="https://buy.stripe.com/9B600icem3hBd7s4Pz8EM00">Pre-order the pack — $29</a>
+      <a class="btn btn-ghost" href="#inside">See what's inside</a>
+    </div>
+    <p class="terms"><strong>$29 founder pre-order, refundable any time before delivery.</strong> List price $49 at launch.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="inside">
+    <h2>What's inside</h2>
+    <p class="lead">Four modules, in Notion and Google Sheets, with a PDF quick-start. Built for launch volume — dozens of clips a day across YouTube, Shorts, TikTok, and Reels — and scaled to whatever cadence your channel actually runs.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Content calendar &amp; upload pipeline</h3>
+        <p>Every video and clip is one record with a status — idea → recorded → edited → packaged → scheduled → published — with the platform noted. Nothing posts twice, nothing gets lost in a folder. Packaging is a real stage with title, thumbnail, and description fields, plus a <strong>spoiler check</strong>, because one untagged story moment in launch season is a channel-level incident.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Sponsorship &amp; affiliate tracker</h3>
+        <p>Every brand offer with its terms, deliverables, and payout dates in one pipeline — and a 12-point FTC disclosure checklist that runs before any placement counts as finished. Brands are flooding GTA 6 creators' inboxes right now; a sponsored clip posted without proper disclosure is a genuine trap, and this is the piece that keeps you out of it.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Video production workflow</h3>
+        <p>A stage-by-stage per-video checklist — capture, edit, packaging, publish, post-publish — so every upload clears the same bar before it exists. Post-publish checks at 24 hours, 72 hours, and 7 days, because in a launch window the climbers show themselves fast and the duds eat schedule slots if you let them.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Creator finance tracker</h3>
+        <p>Income by source, expenses, and a tax set-aside that updates as money lands. Launch money is still taxable money — this makes sure the set-aside happens the day revenue arrives, not the week the bill does.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Made to be yours</h2>
+    <p class="lead">This isn't a screenshot of someone else's system that you're supposed to copy blindly. <strong>Customization and personalization are part of the offer:</strong> a setup pass renames the stages in your words, sets the pipeline to your cadence, and tunes the tax set-aside to your percentage. Your channel's system, built from a working one.</p>
+  </section>
+
+  <section>
+    <div class="pricebox">
+      <div class="price">$29 <small>founder pre-order</small></div>
+      <p style="color:var(--muted);margin:10px 0 0">List price <span class="strike">$49</span> at launch</p>
+      <ul class="checks">
+        <li><strong>Refundable any time before delivery</strong> — one email, no argument</li>
+        <li>All four modules: pipeline, sponsors, production, finance</li>
+        <li>Notion template + Google Sheets version + PDF quick-start</li>
+        <li>Personalization setup included — your stages, your cadence</li>
+        <li>A filled example copy showing the system running a real launch window</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-buy" href="https://buy.stripe.com/9B600icem3hBd7s4Pz8EM00">Pre-order — $29</a>
+      </div>
+      <p class="terms">Secure checkout via Stripe.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Just need thumbnails?</h2>
+    <div class="card">
+      <h3>GTA 6 Thumbnail Pack — $2.99 per thumbnail</h3>
+      <p>Twelve templates — six moments, each in long-form (1280×720) and Shorts (1080×1920) — in two colorways, with layered source files so you can swap in your own frames, plus a guide. Buy one or buy the set; quantity is your choice at checkout.</p>
+      <div class="cta-row" style="justify-content:flex-start">
+        <a class="btn btn-ghost" href="https://buy.stripe.com/cNieVcfqy3hB1oK2Hr8EM01">Get thumbnails — $2.99 each</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Who made this</h2>
+    <p class="lead">I'm <strong>Erich Temaat</strong>, the solo gaming creator behind <strong>ET Gaming 274</strong> on YouTube (<a href="https://www.youtube.com/@etgaming274">@etgaming274</a>). I don't sell a system I read about — this pack is the actual back office my channel runs on, cleaned up and aimed at the creators living the same launch grind. When GTA 6 dropped, my operation went from busy to industrial overnight, and the unglamorous tracking system turned out to be the most valuable thing I own.</p>
+    <div class="honest">
+      <strong>The honest part:</strong> this is a founder pre-order. The pack is in its final build, and every pre-order is refundable any time before delivery — if you change your mind for any reason, you get your money back. No testimonials on this page, because it's new and I won't invent any.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Creator Ops Pack — GTA 6 Edition · Built by Erich Temaat / ET Gaming 274<br>
+    Founder pre-order $29, refundable any time before delivery · List $49
+  </div>
+</footer>
+
+</body>
+</html>
