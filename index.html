@@ -263,5 +263,32 @@
   </div>
 </footer>
 
+<script>
+/* OE measurement (added 2026-11-27, B3 fix): no cookies, no third-party tracker.
+   When a visitor arrives with UTM tags (every distributed link carries them),
+   stamp the channel into every Stripe checkout link as client_reference_id,
+   so a completed checkout is attributable to its channel in Stripe reads.
+   Also preserves the UTM tags on the checkout URL for Stripe-side referrer data. */
+(function () {
+  try {
+    var q = new URLSearchParams(window.location.search);
+    var src = q.get('utm_source');
+    if (!src) return;
+    var med = q.get('utm_medium') || '';
+    var camp = q.get('utm_campaign') || '';
+    var ref = ('oe_' + src + (med ? '_' + med : '') + (camp ? '_' + camp : ''))
+      .replace(/[^A-Za-z0-9_-]/g, '_').slice(0, 200);
+    var links = document.querySelectorAll('a[href*="buy.stripe.com"]');
+    for (var i = 0; i < links.length; i++) {
+      var u = new URL(links[i].href);
+      u.searchParams.set('client_reference_id', ref);
+      u.searchParams.set('utm_source', src);
+      if (med) u.searchParams.set('utm_medium', med);
+      if (camp) u.searchParams.set('utm_campaign', camp);
+      links[i].href = u.toString();
+    }
+  } catch (e) { /* attribution is best-effort; checkout must never break */ }
+})();
+</script>
 </body>
 </html>
